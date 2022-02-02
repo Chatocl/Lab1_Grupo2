@@ -13,7 +13,9 @@ namespace Lab1_Grupo2.Models
         public string Nombre_CL { get; set; }
         public string Apellido_CL { get; set; }
         public string Telefono_CL { get; set; }
-        public string Descripcion_CL { get; set; }
+        public string Descrion_CL { get; set; }
+        public string Poriacaso_CL { get; set; }
 
     }
 }
+//Comentario
