@@ -39,7 +39,8 @@ namespace Lab1_Grupo2.Controllers
                 var NewCliente = new Models.Clientes
                 {
                     Id = Convert.ToInt32(collection["Id"]),
-                    Nombre_del_cliente = collection["Nombre"], Apellido_del_cliente = collection["Apellido"],
+                    Nombre_del_cliente = collection["Nombre"], 
+                    Apellido_del_cliente = collection["Apellido"],
                     Descripcion = collection["Descripción"],
                     Telefono = Convert.ToInt32(collection["Telefono"])
                 };
