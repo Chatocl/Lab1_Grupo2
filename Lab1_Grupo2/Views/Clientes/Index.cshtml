@@ -4,7 +4,7 @@
     ViewData["Title"] = "Listado de clientes";
 }
 
-<h1>Index</h1>
+<h1>Listado de Clientes</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -34,13 +34,13 @@
                 @Html.DisplayFor(modelItem => item.Nombre_del_cliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Apellido_cliente)
+                @Html.DisplayFor(modelItem => item.Apellido_del_cliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Telefono_CL)
+                @Html.DisplayFor(modelItem => item.Telefono)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion_CL)
+                @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

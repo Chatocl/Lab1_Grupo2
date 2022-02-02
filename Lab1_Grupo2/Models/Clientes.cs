@@ -11,10 +11,10 @@ namespace Lab1_Grupo2.Models
     {
         [Required]
         public int? Id {get;set;}
-        public string Nombre_CL { get; set; }
-        public string Apellido_CL { get; set; }
-        public int? Telefono_CL { get; set; }
-        public string Descripcion_CL { get; set; }
+        public string Nombre_del_cliente { get; set; }
+        public string Apellido_del_cliente { get; set; }
+        public int? Telefono { get; set; }
+        public string Descripcion { get; set; }
 
         
     }
