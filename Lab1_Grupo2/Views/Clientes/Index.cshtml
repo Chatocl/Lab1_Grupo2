@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Lab1_Grupo2.Models.Clientes>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Listado de clientes";
 }
 
 <h1>Index</h1>
@@ -13,16 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre_CL)
+                @Html.DisplayNameFor(model => model.Nombre_del_cliente)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apellido_CL)
+                @Html.DisplayNameFor(model => model.Apellido_del_cliente)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telefono_CL)
+                @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion_CL)
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th></th>
         </tr>
@@ -31,10 +31,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre_CL)
+                @Html.DisplayFor(modelItem => item.Nombre_del_cliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Apellido_CL)
+                @Html.DisplayFor(modelItem => item.Apellido_cliente)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Telefono_CL)
