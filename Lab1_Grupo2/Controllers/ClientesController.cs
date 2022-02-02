@@ -1,5 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Lab1_Grupo2.Models.Datos;
 
 namespace Lab1_Grupo2.Controllers
 {
@@ -8,13 +17,14 @@ namespace Lab1_Grupo2.Controllers
         // GET: ClientesController
         public ActionResult Index()
         {
-            return View();
+            return View(Singleton.Instance.ClientesList);
         }
 
         // GET: ClientesController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var ViewStudent = Singleton.Instance.ClientesList.Find(x => x.Id == id);
+            return View(ViewStudent);
         }
 
         // GET: ClientesController/Create
@@ -30,7 +40,16 @@ namespace Lab1_Grupo2.Controllers
         {
             try
             {
+                var NewCliente = new Models.Clientes
+                {
+                    Id = Convert.ToInt32(collection["Id"]), 
+                    Nombre_CL = collection["Nombre"], Apellido_CL = collection["Apellido"],
+                    Descripcion_CL = collection["Descripción"], 
+                    Telefono_CL=Convert.ToInt32(collection["Telefono"])
+                };
+                Singleton.Instance.ClientesList.Add(NewCliente);
                 return RedirectToAction(nameof(Index));
+
             }
             catch
             {
