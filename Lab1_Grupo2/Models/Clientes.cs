@@ -9,9 +9,11 @@ namespace Lab1_Grupo2.Models
     // Class Cliente Almacena Nombre, Apellido, Telefono, Descripcion
     public class Clientes
     {
-        [Required]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public int? Id {get;set;}
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public string Nombre { get; set; }
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public string Apellido { get; set; }
         public int? Telefono { get; set; }
         public string Descripcion { get; set; }
