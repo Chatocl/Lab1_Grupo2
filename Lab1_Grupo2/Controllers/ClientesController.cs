@@ -41,8 +41,8 @@ namespace Lab1_Grupo2.Controllers
                     Id = Convert.ToInt32(collection["Id"]),
                     Nombre = collection["Nombre"], 
                     Apellido = collection["Apellido"],
-                    Descripcion = collection["Descripción"],
-                    Telefono = Convert.ToInt32(collection["Teléfono"])
+                    Descripcion = collection["Descripcion"],
+                    Telefono = Convert.ToInt32(collection["Telefono"])
                 };
                 Singleton.Instance.ClientesList.Add(NewCliente);
                 return RedirectToAction(nameof(Index));

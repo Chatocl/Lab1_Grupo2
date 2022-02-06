@@ -4,29 +4,19 @@
 
 @model IEnumerable<Lab1_Grupo2.Models.Clientes>
 
-<h1>Listado de Clientes</h1>
+<br />
+<h4>Listado de Clientes</h4>
+<h6>Encuentra aquí la información de todos los clientes agregados.</h6>
+<br />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Descripción</th>
             <th></th>
         </tr>
     </thead>
@@ -58,3 +48,6 @@
         }
     </tbody>
 </table>
+<p>
+    <a asp-action="Create" style="color: #435A64">Añadir cliente</a>
+</p>
