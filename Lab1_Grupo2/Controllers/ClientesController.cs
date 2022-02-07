@@ -17,10 +17,10 @@ namespace Lab1_Grupo2.Controllers
         }
 
         // GET: ClientesController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int ID)
         {
-            var ViewStudent = Singleton.Instance.ClientesList.Find(x => x.Id == id);
-            return View(ViewStudent);
+            var ViewCliente = Singleton.Instance.ClientesList.Find(a => a.Id == ID);
+            return View(ViewCliente);
         }
 
         // GET: ClientesController/Create
