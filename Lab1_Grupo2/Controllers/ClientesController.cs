@@ -46,7 +46,6 @@ namespace Lab1_Grupo2.Controllers
                 };
                 Singleton.Instance.ClientesList.Add(NewCliente);
                 return RedirectToAction(nameof(Index));
-
             }
             catch
             {
