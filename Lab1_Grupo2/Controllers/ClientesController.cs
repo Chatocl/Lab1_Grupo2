@@ -17,9 +17,9 @@ namespace Lab1_Grupo2.Controllers
         }
 
         // GET: ClientesController/Details/5
-        public ActionResult Details(int ID)
+        public ActionResult Details(int id)
         {
-            var ViewCliente = Singleton.Instance.ClientesList.Find(a => a.Id == ID);
+            var ViewCliente = Singleton.Instance.ClientesList.Find(a => a.Id == id);
             return View(ViewCliente);
         }
 
@@ -56,7 +56,8 @@ namespace Lab1_Grupo2.Controllers
         // GET: ClientesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var ViewCliente = Singleton.Instance.ClientesList.Find(a => a.Id == id);
+            return View(ViewCliente);
         }
 
         // POST: ClientesController/Edit/5
@@ -66,6 +67,11 @@ namespace Lab1_Grupo2.Controllers
         {
             try
             {
+                
+                Singleton.Instance.ClientesList.Find(a => a.Id == id).Nombre = collection["Nombre"];
+                Singleton.Instance.ClientesList.Find(a => a.Id == id).Apellido = collection["Apellido"];
+                Singleton.Instance.ClientesList.Find(a => a.Id == id).Descripcion = collection["Descripcion"];
+                Singleton.Instance.ClientesList.Find(a => a.Id == id).Telefono = Convert.ToInt32(collection["Telefono"]);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -77,7 +83,8 @@ namespace Lab1_Grupo2.Controllers
         // GET: ClientesController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var ViewCliente = Singleton.Instance.ClientesList.Find(a => a.Id == id);
+            return View(ViewCliente);
         }
 
         // POST: ClientesController/Delete/5
@@ -87,6 +94,7 @@ namespace Lab1_Grupo2.Controllers
         {
             try
             {
+                Singleton.Instance.ClientesList.Remove(Singleton.Instance.ClientesList.FirstOrDefault(a => a.Id == id));
                 return RedirectToAction(nameof(Index));
             }
             catch
