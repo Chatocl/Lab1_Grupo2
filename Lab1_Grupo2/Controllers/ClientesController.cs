@@ -102,5 +102,16 @@ namespace Lab1_Grupo2.Controllers
                 return View();
             }
         }
+
+        public ActionResult OrdenarPorName() 
+        {
+            Singleton.InstanceORD.AuxClientes.OrdenarPorNombre(Singleton.Instance.ClientesList);
+            return RedirectToAction(nameof(Index));
+        }
+        public ActionResult OrdenarPorApe()
+        {
+            Singleton.InstanceORD.AuxClientes.OrdenarPorApellido(Singleton.Instance.ClientesList);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

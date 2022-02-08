@@ -20,7 +20,57 @@ namespace Lab1_Grupo2.Models
         [Required(ErrorMessage = "El campo Descripción es requerido.")]
         public string Descripcion { get; set; }
 
-        
+        public void OrdenarPorNombre(List<Clientes> ListCliente)
+        {
+            int i, j, min;
+            int Aux;
+            Clientes temp;
+
+            for (i = 0; i < ListCliente.Count() - 1; i++)
+            {
+                min = i;
+                for (j = 0; j < ListCliente.Count(); j++)
+                {
+                    Aux = ListCliente[j].Nombre.CompareTo(ListCliente[min].Nombre);
+                    if (Aux == -1)
+                    {
+                        min = j;
+                    }
+                }
+                if (i != min)
+                {
+                    temp = ListCliente[i];
+                    ListCliente[i] = ListCliente[min];
+                    ListCliente[min] = temp;
+                }
+            }
+        }
+        public void OrdenarPorApellido(List<Clientes> ListCliente)
+        {
+            int i, j, min;
+            int Aux;
+            Clientes temp;
+
+            for (i = 0; i < ListCliente.Count() - 1; i++)
+            {
+                min = i;
+                for (j = 0; j < ListCliente.Count(); j++)
+                {
+                    Aux = ListCliente[j].Apellido.CompareTo(ListCliente[min].Apellido);
+                    if (Aux == -1)
+                    {
+                        min = j;
+                    }
+                }
+                if (i != min)
+                {
+                    temp = ListCliente[i];
+                    ListCliente[i] = ListCliente[min];
+                    ListCliente[min] = temp;
+                }
+            }
+        }
+
     }
 }
 //Comentario

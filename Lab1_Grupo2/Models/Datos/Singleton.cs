@@ -9,9 +9,12 @@ namespace Lab1_Grupo2.Models.Datos
     {
         private readonly static Singleton _instance = new Singleton();
         public List<Clientes> ClientesList;
+        private readonly static Singleton _instanceORD = new Singleton();
+        public Clientes AuxClientes;
         private Singleton()
         {
             ClientesList = new List<Clientes>();
+            AuxClientes = new Clientes();   
         }
 
         public static Singleton Instance
@@ -19,6 +22,13 @@ namespace Lab1_Grupo2.Models.Datos
             get
             {
                 return _instance;
+            }
+        }
+        public static Singleton InstanceORD
+        {
+            get
+            {
+                return _instanceORD;
             }
         }
     }
