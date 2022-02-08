@@ -29,7 +29,7 @@ namespace Lab1_Grupo2.Models
             for (i = 0; i < ListCliente.Count() - 1; i++)
             {
                 min = i;
-                for (j = 0; j < ListCliente.Count(); j++)
+                for (j = i+1; j < ListCliente.Count(); j++)
                 {
                     Aux = ListCliente[j].Nombre.CompareTo(ListCliente[min].Nombre);
                     if (Aux == -1)
@@ -54,7 +54,7 @@ namespace Lab1_Grupo2.Models
             for (i = 0; i < ListCliente.Count() - 1; i++)
             {
                 min = i;
-                for (j = 0; j < ListCliente.Count(); j++)
+                for (j = i + 1; j < ListCliente.Count(); j++)
                 {
                     Aux = ListCliente[j].Apellido.CompareTo(ListCliente[min].Apellido);
                     if (Aux == -1)
